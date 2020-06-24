@@ -21,7 +21,7 @@ end
 
 def get_english_meaning(file_path, j_emoticons)
   library = load_library(file_path)        # code goes here
-  result = library.map do |emotion,lang|
+  result = library.each do |emotion,lang|
   binding.pry
 end
 end

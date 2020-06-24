@@ -16,11 +16,11 @@ def load_library(file_path)
 end
 
 def get_japanese_emoticon(file_path, e_emoticons)
-  binding.pry
   library = load_library(file_path)        # code goes here
   japanese = ""
   apology = "Sorry, that emoticon was not found"
   library.each do |emotion,lang|
+    binding.pry
     lang.each do |inner_key,emote|
       if emote == e_emoticons
         japanese = emotion

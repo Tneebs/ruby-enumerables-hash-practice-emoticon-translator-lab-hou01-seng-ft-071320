@@ -22,7 +22,6 @@ def get_japanese_emoticon(file_path, e_emoticons)
   library.each do |emotion,lang|
     lang.each do |inner_key,emote|
       if emote == e_emoticons
-        binding.pry
         japanese = emotion
       end
     end

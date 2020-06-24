@@ -28,3 +28,19 @@ end
 # end
 # end
 
+def get_english_meaning(file,j_emoticon)
+  emoticons = load_library(file)
+  eng_meaning = ""
+  apology = "Sorry, that emoticon was not found"
+  emoticons.each do |emotion, lang|
+    lang.each do |inner_key,emoticon|
+      if emoticon == j_emoticon
+        eng_meaning = emotion
+      end
+    end
+    if eng_meaning == ""
+      eng_meaning = apology
+    end  
+  end
+  eng_meaning
+end

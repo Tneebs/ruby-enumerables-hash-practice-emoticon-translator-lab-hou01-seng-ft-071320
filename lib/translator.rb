@@ -25,10 +25,16 @@ def get_english_meaning(file_path, j_emoticons)
   apology = "Sorry, that emoticon was not found"
   library.each do |emotion,lang|
     lang.each do |inner_key,emote|
-      binding.pry
+      if emote == j_emoticons
+        english = emotion
+      end
+    end
+  if english == ""
+    english = apology
+    end
+   end
+  english
   end
-end
-end
 
 # def get_english_meaning(file,j_emoticon)
 #   emoticons = load_library(file)

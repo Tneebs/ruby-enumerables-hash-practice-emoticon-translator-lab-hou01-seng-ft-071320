@@ -37,10 +37,11 @@ def get_english_meaning(file,j_emoticon)
     lang.each do |inner_key,emoticon|
       if emoticon == j_emoticon
         eng_meaning = emotion
-        binding.pry
+        # binding.pry
       end
     end
     if eng_meaning == ""
+      binding.pry
       eng_meaning = apology
     end  
   end

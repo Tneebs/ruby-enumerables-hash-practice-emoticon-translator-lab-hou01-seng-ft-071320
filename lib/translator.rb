@@ -15,8 +15,21 @@ def load_library(file_path)
  end
 end
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(file_path, e_emoticons)
+  library = load_library(file_path)        # code goes here
+  japanese = ""
+  apology = "Sorry, that emoticon was not found"
+  library.each do |emotion,lang|
+    lang.each do |inner_key,emote|
+      if emote == e_emoticons
+        japanese = emotion
+      end
+    end
+    if japanese == ""
+      japanese = apology
+    end
+  end
+  japanese
 end
 
 def get_english_meaning(file_path, j_emoticons)
@@ -27,14 +40,14 @@ def get_english_meaning(file_path, j_emoticons)
     lang.each do |inner_key,emote|
       if emote == j_emoticons
         english = emotion
-      end
     end
+  end
   if english == ""
     english = apology
     end
-   end
-  english
   end
+  english
+end
 
 # def get_english_meaning(file,j_emoticon)
 #   emoticons = load_library(file)
